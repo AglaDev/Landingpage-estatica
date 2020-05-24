@@ -12,8 +12,31 @@ img{width: 100%;}
     display: grid;
     grid-template-columns:[inicio]30px [inicio-temp] 10px repeat(11, 1fr 10px) [fim-temp]30px[fim];
     grid-template-rows: [inicio-cabecalho] auto [fim-cabecalho] 70px 
-                        [inicio-content-principal] 100px [fim-content-principal]10px;
-    background-clip: padding-box;
+                        [inicio-content-principal] auto [fim-content-principal]10px
+                        [inicio-content-cards] auto [fim-content-cards] 20px
+                        [inicio-content-servicos] 200px [fim-content-servicos];
+}
+/*titulo padrão para todos os contents*/
+.titles-contents{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titles-contents h2{
+    font-family: 'Opens sans', sans-serif;
+    font-weight: lighter;
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom:8px;
+}
+
+.titles-contents hr{
+    height: 3px;
+    width: 100px;
+    background-color: #0000ff;
+    border: none;
 }
 
 /*GRID CABECALHO*/
@@ -81,11 +104,11 @@ img{width: 100%;}
 /*GRID IMAGEM E TITTLES*/
 .content-principal{
     grid-column:inicio-temp / fim-temp ;
-    grid-row:inicio-content-principal / ffim-content-principal ;
+    grid-row:inicio-content-principal / fim-content-principal ;
     display: grid;
     grid-template-columns:[inicio]70px [inicio-banner-titles]10px repeat(11, 1fr 10px) [fim-banner-titles]70px[fim];
     grid-template-rows: [inicio-banner-titles]auto[fim-banner-titles];
-    padding-bottom: 100px;
+    padding-bottom: 70px;
 }
 
 .content-img{
@@ -166,16 +189,24 @@ img{width: 100%;}
     border-radius: 10px;
     font-weight: bold;
 }
+.btn-title-comprar:hover{
+    background-color: #000080;
+}
 
 /*COFIGURAÇÃO DOS CARDS*/
 .content-cards{
     grid-column:inicio-temp / fim-temp ;
-    grid-row:inicio-banner-titles/fim-banner-titles ;
+    grid-row:inicio-content-cards/fim-content-cards ;
     margin-top: 40px;
     display: grid;
     grid-template-columns: [inicio]50px [inicio-card-um] 20% [fim-card-um] auto [inicio-card-dois]20%[fim-card-dois]auto[inicio-card-tres]20%[fim-card-tres]auto[inicio-card-quatro]20%[fim-card-quatro]50px[fim];
-    grid-template-rows: [inicio-cards]auto[fim-cards];
+    grid-template-rows: [title-content-cards] auto [fim-title-content-cards]40px
+                        [inicio-cards]auto[fim-cards];
     margin-bottom: 60px;
+}
+.title-content-cards{
+    grid-column: inicio-card-um / fim-card-quatro;
+    grid-row:title-content-cards/fim-title-content-cards ;
 }
 
 .card{
@@ -252,4 +283,34 @@ img{width: 100%;}
 .card-04{
     grid-column:inicio-card-quatro/fim-card-quatro ;
     grid-row: inicio-cards/fim-cards;
+}
+
+/*CONFIGURAÇÕES DA SECTION SERVIÇOS*/
+
+.content-servicos{
+    grid-column:inicio-temp/fim-temp;
+    grid-row:inicio-content-servicos/fim-content-servicos;
+    border:1px solid #ccc;
+}
+
+.titles-contents{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titles-contents h2{
+    font-family: 'Opens sans', sans-serif;
+    font-weight: lighter;
+    font-size: 1.3em;
+    color: #333;
+    margin-bottom:8px;
+}
+
+.titles-contents hr{
+    height: 3px;
+    width: 100px;
+    background-color: #0000ff;
+    border: none;
 }
