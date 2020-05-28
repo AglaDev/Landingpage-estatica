@@ -307,7 +307,7 @@ img{width: 100%;}
     grid-column: inicio / fim;
     grid-row:inicio-content-servicos/fim-content-servicos;
     display: grid;
-    grid-template-columns: [inicio]30px[inicio-item01]30%[fim-item01]10px[inicio-item02]30%[fim-item02]10px[inicio-item03]30%[fim-item03]30px[fim];
+    grid-template-columns: [inicio]30px[inicio-item01]auto[fim-item01]30px[inicio-item02]auto[fim-item02]30px[inicio-item03]auto[fim-item03]30px[fim];
     grid-template-rows: [inicio-title]auto[fim-title]30px[inicio-item02]10px[inicio-itens01-03]auto[fim-item02]10px[fim-itens01-03];
     padding-bottom: 20px;
     margin-bottom: 50px;
@@ -319,6 +319,7 @@ img{width: 100%;}
 }
 
 .servico{
+    border-radius: 8px;
     width: 100%;
     height: 100%;
     background-color: #fff;
@@ -333,6 +334,7 @@ img{width: 100%;}
     font-size: 1em;
     color: #333;
     margin-bottom: 15px;
+    font-weight: lighter;
 }
 
 .content-img-servico{
