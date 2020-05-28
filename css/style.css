@@ -13,8 +13,11 @@ img{width: 100%;}
     grid-template-columns:[inicio]30px [inicio-temp] 10px repeat(11, 1fr 10px) [fim-temp]30px[fim];
     grid-template-rows: [inicio-cabecalho] auto [fim-cabecalho] 70px 
                         [inicio-content-principal] auto [fim-content-principal]10px
-                        [inicio-content-cards] auto [fim-content-cards] 20px
-                        [inicio-content-servicos] 200px [fim-content-servicos];
+                        [inicio-content-cards] auto [fim-content-cards] 50px
+                        [inicio-img-divisao-top]100px[fim-img-divisao-top]0px
+                        [inicio-content-servicos] auto [fim-content-servicos]0px
+                        [inicio-rodape]auto[fim-rodape]
+                        ;
 }
 /*titulo padrão para todos os contents*/
 .titles-contents{
@@ -287,33 +290,158 @@ img{width: 100%;}
     grid-column:inicio-card-quatro/fim-card-quatro ;
     grid-row: inicio-cards/fim-cards;
 }
+/*IMG-DIVISAO*/
+.img-divisao{
+    grid-column:inicio/fim;
+    grid-row: inicio-img-divisao-top/fim-img-divisao-top;
+    background-image: url(../img/svg/divisao.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: -100px;
+}
 
 /*CONFIGURAÇÕES DA SECTION SERVIÇOS*/
 
 .content-servicos{
-    grid-column:inicio-temp/fim-temp;
+    background-color: #efefef;
+    grid-column: inicio / fim;
     grid-row:inicio-content-servicos/fim-content-servicos;
-    border:1px solid #ccc;
+    display: grid;
+    grid-template-columns: [inicio]30px[inicio-item01]30%[fim-item01]10px[inicio-item02]30%[fim-item02]10px[inicio-item03]30%[fim-item03]30px[fim];
+    grid-template-rows: [inicio-title]auto[fim-title]30px[inicio-item02]10px[inicio-itens01-03]auto[fim-item02]10px[fim-itens01-03];
+    padding-bottom: 20px;
+    margin-bottom: 50px;
 }
 
-.titles-contents{
+.title-servicos{
+    grid-column: inicio/fim;
+    grid-row: inicio-title/fim-title;
+}
+
+.servico{
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
 }
-
-.titles-contents h2{
-    font-family: 'Opens sans', sans-serif;
-    font-weight: lighter;
-    font-size: 1.3em;
+.servico .title-servico{
+    font-size: 1em;
     color: #333;
-    margin-bottom:8px;
+    margin-bottom: 15px;
 }
 
-.titles-contents hr{
-    height: 3px;
-    width: 100px;
-    background-color: #0000ff;
+.content-img-servico{
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.content-img-servico img{
+    width: 80%;
+}
+
+.servico-01{
+    grid-column: inicio-item01/fim-item01;
+    grid-row:inicio-itens01-03/fim-itens01-03 ;
+}
+
+.servico-02{
+    grid-column: inicio-item02/fim-item02;
+    grid-row:inicio-item02/fim-item02 ;
+}
+
+.servico-03{
+    grid-column: inicio-item03/fim-item03;
+    grid-row:inicio-itens01-03/fim-itens01-03 ;
+}
+
+/*configuração newsletter*/  
+.content-footer{
+    grid-column: inicio/fim;
+    grid-row: inicio-rodape/fim-rodape;
+    background-color: #333;
+    padding: 0 30px;
+}
+
+.newsletter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Open Sans', sans-serif;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.newsletter h2{
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-newsletter{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.form-newsletter input{
+    width: 80%;
+    padding: 15px;
+    margin-right:15px;
     border: none;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: #0000ff;
+}
+.form-newsletter button{
+    flex: 1;
+    padding: 15px;
+    color: #fff;
+    border: none;
+    background-color: #0000ff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bolder;
+}
+
+.copyright-midias{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+.copyright{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+.copyright p{
+    margin-right: 20px;
+    color: #fff;
+}
+.copyright span{
+    color: #fff;
+}
+.copyright span a{
+    color: #fff;
+}
+.copyright span:hover a{
+    text-decoration: underline;
+
+}
+
+.midias-sociais{
+    display: flex;
+}
+.midias-sociais li a{
+    padding: 5px;
+    color:#efefef;
+}
+.midias-sociais li a:hover{
+    color: #ccc;
 }
