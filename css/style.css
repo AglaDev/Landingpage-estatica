@@ -106,10 +106,14 @@ img{width: 100%;}
     align-items: center;
     position: fixed;
     top: 0;
-    left: -100%;
+    transform: translateX(-250px);
     background-color: #efefef;
     z-index: 9;
     transition: .3s;
+}
+
+.content-menu-toggle{
+    transform: translateX(-20px);
 }
 
 .content-menu ul.menu{
