@@ -62,6 +62,7 @@ img{width: 100%;}
 .content-menu{
     width: 230px;
     height: 100%;
+    border-right: 1px solid #efefef;
     flex:1;
     display: flex;
     flex-direction: column-reverse;
@@ -70,25 +71,35 @@ img{width: 100%;}
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #ccc;
+    background-color: #efefef;
     z-index: 9;
 }
 
 .content-menu ul.menu{
+    width: 100%;
     display: flex;
-    justify-content: flex-end;
-    padding: 0 10px;
+    justify-content: center;
+    padding: 0 ;
     font-family: 'Open Sans', sans-serif;
     flex: 1;
     justify-content: flex-start;
     flex-direction: column;
 }
+.content-menu ul.menu li{
+    width: 100%;
 
+}
 .content-menu ul.menu li a{
+    width: 100%;
     padding: 15px 10px;
+    padding-left: 30px;
     display: block;
     font-size: 0.9em;
     color: #4F4F4F;
+    cursor: pointer;
+}
+.content-menu ul.menu li a:hover{
+    background-color: #fff;
 }
 
 .content-login-cadastro{
@@ -98,6 +109,7 @@ img{width: 100%;}
    justify-content: center;
    align-items: center;
    background-color: #fff;
+   margin-bottom: 20px;
 }
 
 .content-login-cadastro .btn-login{
