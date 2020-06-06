@@ -356,7 +356,7 @@ img{width: 100%;}
     grid-column: inicio / fim;
     grid-row:inicio-content-servicos/fim-content-servicos;
     display: grid;
-    grid-template-columns: [inicio]30px[inicio-item01]auto[fim-item01]30px[inicio-item02]auto[fim-item02]30px[inicio-item03]auto[fim-item03]30px[fim];
+    grid-template-columns: 30px[inicio]0px[inicio-item01]auto[fim-item01]30px[inicio-item02]auto[fim-item02]30px[inicio-item03]auto[fim-item03]0px[fim]30px;
     grid-template-rows: [inicio-title]auto[fim-title]30px[inicio-item01]auto[fim-item01]30px[inicio-item02]auto[fim-item02]30px[inicio-item03]auto[fim-item03];
     padding-bottom: 20px;
     margin-bottom: 50px;
