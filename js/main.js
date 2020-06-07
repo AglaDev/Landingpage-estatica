@@ -64,44 +64,38 @@ window.onload = function(){
 
     //arruma essa função ainda não esta funcionando corretamente
     function goItem(posicao){
-        var cont=0;
-        var time = 50;
-        var posi = window.scrollY;
+        
+        var inicio = window.scrollY;
+        var fim = posicao;
+        var posAtual = inicio;
+        var incremento=30;
+
         var interval = setInterval(function(){
 
-            
-            if(posi > posicao){
-                posi-=time;
-                window.scrollTo(0,posi)
-                console.log(posicao,posi)
-            }else{
-                posi+=time;
-                window.scrollTo(0,posi)
-                console.log(posicao,posi)
-                if(posi>posicao){
+            if(inicio<fim){
+
+                posAtual+=incremento;
+                window.scrollTo(0,posAtual-50);
+                console.log(posAtual,fim);
+
+                if(posAtual==fim || posAtual>fim){
                     clearInterval(interval);
+                }
+
+            }else if(inicio>fim){
+                posAtual-=incremento;
+                window.scrollTo(0,posAtual-50);
+                console.log(posAtual,fim);
+                
+
+                if(posAtual==fim || posAtual<fim){
+                    clearInterval(interval); 
                 }
             }
 
+        },15)
+        
            
-        
-
-        },20);
-        
-
-
-
-
-
-        window.addEventListener('scroll',function(){
-
-            var posTempoRealScroll = window.scrollY;
-            
-
-        })
-
-    
-
     }
 
     efeitoScrollMenu();
