@@ -28,13 +28,11 @@
 
                 <ul class="menu">
 
-                    <li><a href="#i">Home</a></li>
-                    <li><a href="#i">Preços</a></li>
-                    <li><a href="#i">Serviços</a></li>
-                    <li><a href="#i">Sobre</a></li>
-                    <li><a href="#i">Blog</a></li>
-                    <li><a href="#i">Suporte</a></li>
-
+                    <li><a href="i" data-get-item-menu='#home'>Home</a></li>
+                    <li><a href="#i" data-get-item-menu='#destaques'>Destaques</a></li>
+                    <li><a href="#i" data-get-item-menu='#servicos'>Serviços</a></li>
+                    <li><a href="#i" data-get-item-menu='#assinar'>Assine</a></li>
+                    
                 </ul>
 
                 <div class="content-login-cadastro">
@@ -49,7 +47,7 @@
 
         </header>
 
-        <main class="content-principal">
+        <main class="content-principal" id="home">
 
             <section class="content-img">
 
@@ -87,7 +85,7 @@
 
         </main>
 
-        <aside class="content-cards">
+        <aside class="content-cards" id="destaques">
 
             <div class="title-content-cards titles-contents">
                 <h2>Em alta</h2>
@@ -150,7 +148,7 @@
                 
         </div>
 
-        <section class="content-servicos">
+        <section class="content-servicos" id="servicos">
 
             <div class="titles-contents title-servicos">
                 <h2>Serviços</h2>
@@ -196,7 +194,7 @@
 
                 <h2>Newsletter</h2>
 
-                <form class="form-newsletter">
+                <form class="form-newsletter" id="assinar">
 
                     <input type="text" placeholder="Digite seu email...">
                     <button class="btn-newsletter">Cadastrar</button>

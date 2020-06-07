@@ -4,10 +4,15 @@ window.onload = function(){
     var btnMenu = document.getElementById('bt-menu');
     var cabecalho = document.getElementById('cabecalho');
 
-    btnMenu.addEventListener('click', function(){
+    function toggleBtnMenu(){
 
         btnMenu.classList.toggle('btn-menu-toggle');
 
+    }
+
+    btnMenu.addEventListener('click', function(){
+
+        toggleBtnMenu();
         toggleMenu();
 
     })
@@ -21,7 +26,47 @@ window.onload = function(){
 
     }
     
+    //SCROLL DOS ITEMS DO MENU
 
+    function efeitoScrollMenu(){
+
+        var links = document.querySelectorAll('.menu li a');
+
+        links.forEach(function(e){
+          
+            selectItem(e);
+
+        });
+
+
+    }
+
+    function selectItem(item){
+        
+        item.addEventListener('click', function(event){
+            event.preventDefault();
+            toggleMenu();
+            toggleBtnMenu();
+            var seletor = this.getAttribute('data-get-item-menu');
+            var posicao = document.querySelector(seletor).offsetTop;
+
+            goItem(posicao)
+            
+
+        });
+
+    }
+
+    function goItem(posicao){
+       
+        
+
+    
+
+    }
+
+    efeitoScrollMenu();
+    
 
 
 
