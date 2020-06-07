@@ -96,24 +96,25 @@ img{width: 100%;}
 
 /*CONTENT MENU*/
 .content-menu{
-    width: 230px;
+    width: 270px;
     height: 100%;
     border-right: 1px solid #efefef;
     flex:1;
     display: flex;
     flex-direction: column-reverse;
-    justify-content: flex-end;
+    
     align-items: center;
     position: fixed;
     top: 0;
-    transform: translateX(-250px);
+    left: 0;
+    transform: translateX(-100%);
     background-color: #efefef;
     z-index: 9;
     transition: .3s;
 }
 
 .content-menu-toggle{
-    transform: translateX(-20px);
+    transform: translateX(0%);
 }
 
 .content-menu ul.menu{
@@ -536,3 +537,56 @@ img{width: 100%;}
 
 /*MEDIA QUERIES*/
 
+@media screen and (min-width:580px){
+
+    .content-principal{
+        padding:20px 70px 70px 70px;
+    }
+
+    .content-cards{
+        padding: 0 90px;
+    }
+
+}
+
+@media screen and (min-width:680px){
+    .content-cards{
+        padding: 0 30px;
+        grid-template-columns: [inico-cards-um-tres]1fr[fim-cards-um-tres]20px[inicio-cards-dois-quatro]1fr[fim-cards-dois-quatro];
+        grid-template-rows: [inicio-title-content-cards]auto[fim-title-content-cards]30px
+                            [inicio-cards-um-dois]auto[fim-cards-um-dois]20px
+                            [inicio-cards-tres-quatro]auto[fim-cards-tres-quatro];
+    }
+    .title-content-cards {
+        grid-column: inico-cards-um-tres/fim-cards-dois-quatro;
+        grid-row:inicio-title-content-cards/fim-title-content-cards ;
+    }
+    .card-01{
+        grid-column:inico-cards-um-tres/fim-cards-um-tres ;
+        grid-row:inicio-cards-um-dois/fim-cards-um-dois ;
+    }
+
+    .card-02{
+        grid-column: inicio-cards-dois-quatro/fim-cards-dois-quatro;
+        grid-row: inicio-cards-um-dois/fim-cards-um-dois ;
+    }
+
+    .card-03{
+        grid-column:inico-cards-um-tres/fim-cards-um-tres ;
+        grid-row: inicio-cards-tres-quatro/fim-cards-tres-quatro;
+    }
+
+    .card-04{
+        grid-column: inicio-cards-dois-quatro/fim-cards-dois-quatro;
+        grid-row: inicio-cards-tres-quatro/fim-cards-tres-quatro;
+    }
+}
+
+@media screen and (min-width:720px){
+
+    .content-principal{
+        padding:20px 90px 90px 90px;
+    }
+
+
+}

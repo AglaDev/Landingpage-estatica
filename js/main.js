@@ -1,7 +1,8 @@
 window.onload = function(){
 
     //CONFIGURAÇÕES DO MENU
-    var btnMenu = this.document.getElementById('bt-menu');
+    var btnMenu = document.getElementById('bt-menu');
+    var cabecalho = document.getElementById('cabecalho');
 
     btnMenu.addEventListener('click', function(){
 
@@ -19,6 +20,8 @@ window.onload = function(){
 
 
     }
+    
+
 
 
 
