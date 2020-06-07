@@ -180,7 +180,7 @@ img{width: 100%;}
     grid-row:inicio-content-principal / fim-content-principal ;
     display: grid;
     grid-template-columns:[inicio]70px [inicio-banner-titles]10px repeat(11, 1fr 10px) [fim-banner-titles]70px[fim];
-    grid-template-rows: [inicio-banner]auto[fim-banner]40px
+    grid-template-rows: [inicio-banner]auto[fim-banner]60px
                         [inicio-titles]auto[fim-titles];
     padding-bottom: 70px;
 }
@@ -211,6 +211,7 @@ img{width: 100%;}
     justify-content: center;
     font-family: 'Open Sans', sans-serif;
     font-size: 0.8em;
+    transition: .4s;
 }
 
 
@@ -550,6 +551,24 @@ img{width: 100%;}
 }
 
 @media screen and (min-width:680px){
+    .detalhes-img{
+        width: 60%;
+        position: absolute;
+        bottom: -40px;
+        right:-5% ;
+        border-radius:8px;
+        background-color:#efefef;
+        color: #333;
+        display: flex;
+        padding: 20px;
+        justify-content: center;
+        font-family: 'Open Sans', sans-serif;
+        border-bottom: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+        font-size: 1em;
+        transition: .4s;
+        
+    }
     .content-cards{
         padding: 0 30px;
         grid-template-columns: [inico-cards-um-tres]1fr[fim-cards-um-tres]20px[inicio-cards-dois-quatro]1fr[fim-cards-dois-quatro];
@@ -583,7 +602,32 @@ img{width: 100%;}
 }
 
 @media screen and (min-width:720px){
-
+    .btn-menu{
+        display: none;
+    }
+    .content-menu{
+        width: 100%;
+        display: flex;
+        transform: translateX(0%);
+        position: static;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        border-right: none;
+        background-color: inherit;
+    }
+    .content-menu ul.menu{
+        flex:1;
+        flex-direction: row;
+        padding: 0 20px;
+    }
+    .content-menu ul.menu li a:hover{
+        background-color: inherit;
+    }
+    .content-login-cadastro{
+        width: auto;
+        margin-bottom: 0;
+    }
     .content-principal{
         padding:20px 90px 90px 90px;
     }
