@@ -65,33 +65,50 @@ img{width: 100%;}
 }
 .btn-menu{
     height: 25px;
+    width: 25px;
+    padding: 3px 1px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content:space-between;
+    align-items: center;
+    overflow: hidden;
 }
 .linha{
     width: 100%;
-    height:4px;
+    height:3px;
     background-color: #333;
     transition: .3s;
-    width: 30px;
+    display: block;
+    position: relative;
+    animation: transform .4s;
 }
+.btn-menu-toggle{
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+.btn-menu-toggle .linha{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    animation: transform .4s;
+}
+.btn-menu-toggle .linha1{
+    transform: rotate(45deg);
+}
+.btn-menu-toggle .linha2{
+    transform: translateX(-100%) rotate(20deg);
+}
+.btn-menu-toggle .linha3{
+    transform: rotate(-45deg);
+}
+
 .btn-menu-toggle{
     display: flex;
     text-align: center;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-.btn-menu-toggle .linha0{
-    transform:rotate(45deg) translateY(3px);
-}
-.btn-menu-toggle .linha1{
-    transform: translateX(-100%);
-    display: none;
-}
-.btn-menu-toggle .linha2{
-    transform:rotate(-45deg) translateY(-3px);
 }
 
 
@@ -277,7 +294,7 @@ img{width: 100%;}
     grid-row:inicio-content-cards/fim-content-cards ;
     margin-top: 40px;
     display: grid;
-    grid-template-columns:[inicio]50px [inicio-card-um] auto [fim-card-um] auto [inicio-card-dois]20%[fim-card-dois]auto[inicio-card-tres]20%[fim-card-tres]auto[inicio-card-quatro]20%[fim-card-quatro]50px[fim];
+    grid-template-columns:[inicio]80px [inicio-card-um] auto [fim-card-um] auto [inicio-card-dois]20%[fim-card-dois]auto[inicio-card-tres]20%[fim-card-tres]auto[inicio-card-quatro]20%[fim-card-quatro]80px[fim];
     grid-template-rows: [title-content-cards] auto [fim-title-content-cards]40px
                         [inicio-card-um]auto[fim-card-um]30px
                         [inicio-card-dois]auto[fim-card-dois]30px
