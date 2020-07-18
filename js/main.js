@@ -1,13 +1,17 @@
 window.onload = ()=>{
 
     const btnmenu = document.querySelector('.btn-menu')
+    const contenmenu = document.querySelector('.content-menu')
     
+    BtnMenu(btnmenu)
     
-    function BtnMenu(btn){
+    //BTN MENU
+    function BtnMenu(element){
 
-        btn.onclick = ()=>{
+        element.onclick = ()=>{
 
-            toggleBtnMenu(btn)
+            toggleBtnMenu(element)
+            toggleContentMenu(contenmenu)
             
         }
 
@@ -17,7 +21,14 @@ window.onload = ()=>{
         element.classList.toggle('btn-menu-toggle')
     }
 
-    BtnMenu(btnmenu)
+    //CONTENT MENU
+
+    function toggleContentMenu(element){
+
+        element.classList.toggle('content-menu-toggle')
+
+    }
+    
 
 
 
