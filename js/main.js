@@ -37,7 +37,8 @@ window.onload = function(){
             link.addEventListener('click',function(e){
                 
                 e.preventDefault()
-
+                toggleBtnMenu(btnmenu)
+                toggleContentMenu(contenmenu)
                 posicaoItem(this)
 
 
@@ -60,8 +61,39 @@ window.onload = function(){
 
     function goItem(posicao){
         let alturaCabecalho = document.querySelector('#cabecalho').offsetHeight
-        window.scrollTo(0, posicao-50)
-        console.log(alturaCabecalho)
+        let inicio =  window.scrollY
+        let final = posicao
+        let incremento = 60
+        let posicaoAtual=inicio;
+
+        let intervalo = setInterval(function(){
+            
+            if(inicio<final){
+                posicaoAtual += incremento
+                window.scrollTo(0,posicaoAtual)
+                
+                if(posicaoAtual==final || posicaoAtual>final){ 
+                    posicaoAtual=final
+                    window.scrollTo(0,posicaoAtual-50)
+                    console.log(posicaoAtual)
+                    clearInterval(intervalo)
+                }
+            }else{
+                posicaoAtual -= incremento
+                window.scrollTo(0,posicaoAtual)
+                
+                if(posicaoAtual==final || posicaoAtual< final){
+                    posicaoAtual=final
+                    window.scrollTo(0,posicaoAtual-50)
+                    console.log(posicaoAtual)
+                    clearInterval(intervalo)
+                }
+            }
+
+        },15)
+
+
+        
     }
 
  
